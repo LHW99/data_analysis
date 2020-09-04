@@ -26,4 +26,19 @@ df.index = [
   'Row D'
 ]
 
-print df['Column A'] > 50
+# inserting new column
+cd = pd.Series(
+  [1, 0],
+  index=['Row B', 'Row D'],
+  name = 'Column D'
+)
+
+df['Column D'] = cd
+
+# turns every value in column d to 2
+# df['Column D'] = 2
+
+# you can create a new column using a combination of other columns
+df['Column E'] = df['Column B'] + df['Column C']
+
+print df
